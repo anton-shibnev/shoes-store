@@ -1,0 +1,21 @@
+.button {
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: max-content;
+  @include trs;
+
+  &--danger {
+    background-color: $danger;
+    &:hover {
+      background-color: lighten($danger, 5%);
+    }
+    &:active {
+      background-color: darken($danger, 5%);
+    }
+  }
+}

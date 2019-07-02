@@ -1,0 +1,124 @@
+//default settings
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+html {
+  font-family: $mainFF;
+  line-height: $mainLH;
+  font-size: $mainFS;
+  color: $mainFC;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.App {
+  flex-grow: 2;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.h1,
+h1 {
+  font-size: 10vmin;
+}
+
+.h2,
+h2 {
+  font-size: 9vmin;
+}
+
+.h3,
+h3 {
+  font-size: 8vmin;
+}
+
+.h4,
+h4 {
+  font-size: 7vmin;
+}
+
+.h5,
+h5 {
+  font-size: 6vmin;
+}
+
+.h6,
+h6 {
+  font-size: 5vmin;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  flex: 0 0 auto;
+  position: relative;
+  margin: 0 auto;
+  $num: 100;
+  max-width: $lg - $num;
+  padding: 0 #{$num/2}px;
+
+  @include media-max($lg - 1) {
+    $num: 100;
+    max-width: $md - $num;
+    padding: 0 #{$num/2}px;
+  }
+
+  @include media-max($md - 1) {
+    $num: 50;
+    // max-width: $sm - $num;
+    padding: 0 #{$num/2}px;
+  }
+
+  @include media-max($sm - 1) {
+    $num: 30;
+    // max-width: $xs - $num;
+    padding: 0 #{$num/2}px;
+  }
+}
