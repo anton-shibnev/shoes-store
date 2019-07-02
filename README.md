@@ -1,1 +1,1 @@
-# webpack-bo-build
+# bo-build
