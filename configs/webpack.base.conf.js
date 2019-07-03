@@ -93,10 +93,20 @@ module.exports = {
     },
     {
       test: /\.pug$/,
-      loader: 'pug-loader',
-      options: {
-        pretty: true,
-      },
+      use: [
+        {
+          loader: 'pug-loader',
+          options: {
+            pretty: true,
+          },
+        },
+        {
+          loader: 'pug-bem-plain-loader',
+          options: {
+            b: true,
+          },
+        },
+      ],
     },
     ],
   },
