@@ -145,15 +145,6 @@
   }
 }
 
-// -- font --
-
-@mixin font($size: $mainFS, $height: $mainLH, $weight: $mainFW, $family: $mainFF) {
-  font-size: $size;
-  line-height: $height;
-  font-weight: $weight;
-  font-family: $family;
-}
-
 // hide text
 
 @mixin hideText {

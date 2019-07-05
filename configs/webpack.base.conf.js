@@ -103,7 +103,7 @@ module.exports = {
         {
           loader: 'pug-bem-plain-loader',
           options: {
-            b: 'b_',
+            b: 'bem_',
           },
         },
       ],
