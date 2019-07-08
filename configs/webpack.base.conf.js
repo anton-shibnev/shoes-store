@@ -10,7 +10,7 @@ const PATHS = {
   dist: path.join(__dirname, '../dist'),
   configs: path.join(__dirname, '../configs'),
   pages: path.join(__dirname, '../src/pages'),
-  assets: 'assets/',
+  static: path.join(__dirname, '../static'),
 };
 
 function generateHtmlPlugins(templateDir) {
@@ -37,7 +37,7 @@ module.exports = {
     main: PATHS.src,
   },
   output: {
-    filename: `${PATHS.assets}js/[name].js`,
+    filename: 'assets/js/[name].js',
     path: PATHS.dist,
   },
   module: {
@@ -117,19 +117,19 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].css`,
+      filename: 'assets/css/[name].css',
     }),
     new CopyWebpackPlugin([{
-      from: `${PATHS.src}/assets/images`,
-      to: `${PATHS.assets}/images`,
+      from: `${PATHS.static}/images`,
+      to: 'assets/images',
     },
     {
-      from: `${PATHS.src}/assets/fonts`,
-      to: `${PATHS.assets}/fonts`,
+      from: `${PATHS.static}/fonts`,
+      to: 'assets/fonts',
     },
     {
-      from: `${PATHS.src}/assets/video`,
-      to: `${PATHS.assets}/video`,
+      from: `${PATHS.static}/video`,
+      to: 'assets/video',
     },
     ]),
   ].concat(htmlPlugins),
