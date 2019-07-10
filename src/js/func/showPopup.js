@@ -1,37 +1,53 @@
-const showPopup = () => {
-  const popups = document.querySelectorAll('.popup');
-  if (popups.length <= 0) return;
+const onPopup = (popupId) => {
+  const popup = document.getElementById(popupId);
+  const inner = popup.querySelector('.popup__inner');
 
-  const btns = document.querySelectorAll('[data-popup]');
-  const b = document.body;
+  popup.style.display = 'block';
 
-  btns.forEach((el) => {
-    const needPopup = el.getAttribute('data-popup');
-    const popup = document.querySelector(`#${needPopup}`);
-    const popupWrap = popup.querySelector('.popup__wrap');
+  popup.classList.add('on');
+  document.body.classList.add('unscrolled');
 
-    el.addEventListener('click', (e) => {
-      popup.classList.add('popup--show');
-      b.classList.add('unscrolled');
+  setTimeout(() => {
+    inner.classList.add('on');
+  }, 300);
 
-      if (popupWrap === null) return;
+}
 
-      setTimeout(() => {
-        popupWrap.classList.add('popup__wrap--show');
-      }, 700);
+const offPopup = (popupId) => {
+  const popup = document.getElementById(popupId)
+  const inner = popup.querySelector('.popup__inner');
+  inner.classList.remove('on');
 
-      e.returnValue = false;
+  setTimeout(() => {
+    popup.classList.remove('on');
+    document.body.classList.remove('unscrolled');
+  }, 300);
+
+  setTimeout(() => popup.style.display = 'none', 500);
+}
+
+const getPopup = () => {
+  const $popups = document.querySelectorAll('.popup');
+  const $btns = document.querySelectorAll('[data-popup]');
+  if (!$popups && !$btns) return;
+
+  $btns.forEach((el) => {
+    const $that = el;
+    const needPopup = $that.getAttribute('data-popup');
+    const $popup = document.getElementById(needPopup);
+    const $inner = $popup.querySelector('.popup__inner');
+
+    if (!$inner) return;
+    $popup.style.display = 'none';
+
+    $that.addEventListener('click', () => {
+      onPopup($popup.id)
     });
-  });
 
-  popups.forEach((el) => {
-    const close = el.querySelector('.popup__close');
-
-    close.addEventListener('click', () => {
-      el.classList.remove('popup--show');
-      b.classList.remove('unscrolled');
+    $popup.addEventListener('click', (e) => {
+      if (e.target.classList.contains('popup__close') || !$inner.contains(event.target)) {
+        offPopup($popup.id);
+      }
     });
   });
 };
-
-export default showPopup;

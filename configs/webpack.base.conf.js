@@ -112,7 +112,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      lib: 'src/lib/js',
+      lib: 'static/lib/js',
     },
   },
   plugins: [
