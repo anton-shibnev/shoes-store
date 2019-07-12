@@ -1,2 +1,2 @@
 import './js/main';
-import './styles/main.scss';
+import './scss/main.scss';

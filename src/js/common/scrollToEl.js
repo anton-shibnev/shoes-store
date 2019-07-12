@@ -1,11 +1,42 @@
-import getCoords from './getCoords';
+// const paralaxHero = (el, wrapper) => {
+//   const box = document.querySelector(el);
+//   if (!box) return;
 
-const scrollToEl = (el) => {
-  window.scroll({
-    top: getCoords(el).top,
-    left: 0,
-    behavior: 'smooth',
-  });
-};
+//   const scrollOptions = {
+//     capture: false,
+//     passive: true,
+//     behavior: 'smooth',
+//   }
 
-export default scrollToEl;
+//   const onScroll = () => {
+//     box.style.transform = `
+//     translateY(-${ window.scrollY/4}px)
+//     translateX(-50%)
+//     `;
+//   }
+
+//   onScroll();
+
+//   if ('IntersectionObserver' in window) {
+//     const referenceImage = document.querySelector(wrapper)
+
+//     const observer = new IntersectionObserver(entries => {
+//       let [{
+//         isIntersecting
+//       }] = entries
+
+//       if (isIntersecting) {
+//         window.addEventListener('scroll', onScroll, scrollOptions)
+//       } else {
+//         window.removeEventListener('scroll', onScroll, scrollOptions)
+//       }
+//     })
+
+//     observer.observe(referenceImage)
+
+//   } else {
+//     window.addEventListener('scroll', onScroll, scrollOptions)
+//   }
+// }
+
+// paralaxHero('.hero__box', '.hero__wrapper');

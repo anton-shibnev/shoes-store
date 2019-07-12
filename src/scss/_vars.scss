@@ -1,0 +1,30 @@
+// Font
+$mainFF: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Roboto",
+"Oxygen",
+"Ubuntu",
+"Cantarell",
+"Fira Sans",
+"Droid Sans",
+"Helvetica Neue",
+sans-serif;
+$mainFC: #212529;
+$mainFS: 18px;
+$mainFW: 400;
+$mainLH: 1.4;
+
+// media
+$lg: screen and (max-width:1599px);
+$md: screen and (max-width:1279px);
+$sm: screen and (max-width:767px);
+
+// Main color
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #17a2b8;
+$dark: #343a40;
