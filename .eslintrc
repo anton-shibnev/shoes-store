@@ -1,7 +1,10 @@
 {
   "extends": "airbnb/base",
+  "rules": {
+    "arrow-body-style": ["error", "always"],
+  },
   "globals": {
     "document": false,
-    "window": false
+    "window": false,
   }
 }

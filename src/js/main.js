@@ -1,7 +1,5 @@
-// import stickyHeader from './func/stickyHeader';
-// import getBurger from './func/getBurger';
+import stickyHeader from './func/stickyHeader';
 
-// window.addEventListener('DOMContentLoaded', () => {
-//   stickyHeader();
-//   getBurger();
-// });
+window.addEventListener('DOMContentLoaded', () => {
+  stickyHeader();
+});

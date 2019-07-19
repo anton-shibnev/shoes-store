@@ -16,9 +16,9 @@ $mainFW: 400;
 $mainLH: 1.4;
 
 // media
-$lg: screen and (max-width:1599px);
-$md: screen and (max-width:1279px);
-$sm: screen and (max-width:767px);
+$lg: 'screen and (max-width:1599px)';
+$md: 'screen and (max-width:1279px)';
+$sm: 'screen and (max-width:767px)';
 
 // Main color
 $primary: #007bff;

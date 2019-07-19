@@ -1,10 +1,5 @@
 .empty {
-
-
-
-
-
-  @media #{$tablet} {}
-
-  @media #{$mobile} {}
+  $this: &;
+  @media #{$lg} {}
+  @media #{$sm} {}
 }
