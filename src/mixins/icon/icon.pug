@@ -1,9 +1,0 @@
-mixin icon(name, type, blockName, mod)
-  -var mod = mod || ''
-  -var svgClass = blockName ? blockName + '__svg ' + mod : ''
-  -var useClass = blockName ? blockName + '__use ' + mod : ''
-    svg(class=svgClass)
-      if (type === 'fill')
-        use( class=useClass xlink:href= path + "/images/html-sprite-fill.svg#" + name)
-      else
-        use( class=useClass xlink:href= path + "/images/html-sprite.svg#" + name)

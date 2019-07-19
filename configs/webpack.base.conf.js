@@ -3,7 +3,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const globImporter = require('node-sass-glob-importer');
-const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const fs = require('fs');
 
 const PATHS = {
@@ -61,6 +60,13 @@ module.exports = {
           name: 'fonts/[name][hash].[ext]',
         },
       },
+    },
+    {
+      test: /\.svg$/,
+      use: [
+        'svg-sprite-loader',
+        'svgo-loader',
+      ],
     },
     {
       test: /\.scss$/,
@@ -124,7 +130,6 @@ module.exports = {
       from: `${PATHS.static}/images`,
       to: 'assets/images',
     },
-    new SVGSpritemapPlugin(),
     {
       from: `${PATHS.static}/fonts`,
       to: 'assets/fonts',
