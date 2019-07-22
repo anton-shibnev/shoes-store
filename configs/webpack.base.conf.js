@@ -49,8 +49,15 @@ module.exports = {
     },
     {
       test: /\.js$/,
-      loader: 'babel-loader',
       exclude: '/node_modules/',
+      use: [
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env'],
+          },
+        },
+      ],
     },
     {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -61,13 +68,13 @@ module.exports = {
         },
       },
     },
-    {
-      test: /\.svg$/,
-      use: [
-        'svg-sprite-loader',
-        'svgo-loader',
-      ],
-    },
+    // {
+    //   test: /\.svg$/,
+    //   loader: 'svg-sprite-loader',
+    //   options: {
+    //     extract: true,
+    //   },
+    // },
     {
       test: /\.scss$/,
       use: [
