@@ -97,29 +97,22 @@ li {
 }
 
 .container {
-  width: 100%;
-  flex: 0 0 auto;
+  $p: 72px;
   position: relative;
+  width: 100%;
   margin: 0 auto;
-  $num: 100;
-  // max-width: $lg - $num;
-  padding: 0 #{$num/2}px;
+  flex: 0 0 auto;
+  max-width: 1440px;
+  padding: 0 $p;
 
-  @include media-max($lg) {
-    $num: 100;
-    // max-width: $md - $num;
-    padding: 0 #{$num/2}px;
+  @media #{$lg} {
+    padding: 0 50px;
+  }
+  @media #{$md} {
+    padding: 0 38px;
   }
 
-  @include media-max($md) {
-    $num: 50;
-    // max-width: $sm - $num;
-    padding: 0 #{$num/2}px;
-  }
-
-  @include media-max($sm) {
-    $num: 30;
-    // max-width: $xs - $num;
-    padding: 0 #{$num/2}px;
+  @media #{$sm} {
+    padding: 0 20px;
   }
 }
