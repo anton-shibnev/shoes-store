@@ -11,6 +11,7 @@ const PATHS = {
   configs: path.join(__dirname, '../configs'),
   pages: path.join(__dirname, '../src/pages'),
   static: path.join(__dirname, '../static'),
+  assets: 'assets/',
 };
 
 function generateHtmlPlugins(templateDir) {
@@ -34,11 +35,24 @@ module.exports = {
     paths: PATHS,
   },
   entry: {
-    main: PATHS.src,
+    app: PATHS.src,
   },
   output: {
-    filename: 'assets/js/[name].js',
+    filename: `${PATHS.assets}/js/[name].[hash].js`,
     path: PATHS.dist,
+    publicPath: '/',
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [{
@@ -60,21 +74,12 @@ module.exports = {
       ],
     },
     {
-      test: /\.(eot|svg|ttf|woff|woff2)$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[name][hash].[ext]',
-        },
+      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
       },
     },
-    // {
-    //   test: /\.svg$/,
-    //   loader: 'svg-sprite-loader',
-    //   options: {
-    //     extract: true,
-    //   },
-    // },
     {
       test: /\.scss$/,
       use: [
@@ -131,19 +136,19 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].css',
+      filename: `${PATHS.assets}/css/[name].[hash].css`,
     }),
     new CopyWebpackPlugin([{
       from: `${PATHS.static}/images`,
-      to: 'assets/images',
+      to: `${PATHS.assets}/images`,
     },
     {
       from: `${PATHS.static}/fonts`,
-      to: 'assets/fonts',
+      to: `${PATHS.assets}/fonts`,
     },
     {
       from: `${PATHS.static}/video`,
-      to: 'assets/video',
+      to: `${PATHS.assets}/video`,
     },
     ]),
   ].concat(htmlPlugins),

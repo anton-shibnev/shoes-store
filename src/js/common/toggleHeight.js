@@ -7,7 +7,7 @@ const toggleHeight = (elToClick, elToShow) => {
 
   elToClick.addEventListener('click', () => {
     if (!num) {
-      el.style.height = `${elShowHeight + 1}px`;
+      el.style.height = `${elShowHeight}px`;
       num += 1;
     } else {
       el.style.height = '0px';
