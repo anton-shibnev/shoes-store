@@ -1,0 +1,14 @@
+.footer {
+  $this: &;
+
+  width: 100%;
+  min-height: 100px;
+  background: $dark;
+
+  // == media ==
+  @media #{$laptop} {}
+
+  @media #{$tablet} {}
+
+  @media #{$mobile} {}
+}

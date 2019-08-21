@@ -16,10 +16,10 @@ $mainFW: 400;
 $mainLH: 1.4;
 
 // media
-$xl: 'screen and (max-width:1599px)';
-$lg: 'screen and (max-width:1279px)';
-$md: 'screen and (max-width:1024px)';
-$sm: 'screen and (max-width:767px)';
+$desktop: 'screen and (max-width:1599px)';
+$laptop: 'screen and (max-width:1279px)';
+$tablet: 'screen and (max-width:1024px)';
+$mobile: 'screen and (max-width:767px)';
 
 // Main color
 $primary: #007bff;

@@ -1,6 +1,10 @@
 .header {
   $this: &;
 
-  @media #{$lg} {}
-  @media #{$sm} {}
+  // == media ==
+  @media #{$laptop} {}
+
+  @media #{$tablet} {}
+
+  @media #{$mobile} {}
 }

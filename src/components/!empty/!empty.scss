@@ -1,5 +1,13 @@
-.empty {
+$name: empty;
+
+.#{$name} {
   $this: &;
-  @media #{$lg} {}
-  @media #{$sm} {}
+  grid-area: $name;
+
+  // == media ==
+  @media #{$laptop} {}
+
+  @media #{$tablet} {}
+
+  @media #{$mobile} {}
 }

@@ -87,6 +87,11 @@ h6 {
 a {
   text-decoration: none;
   color: inherit;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 ul,
@@ -105,14 +110,10 @@ li {
   max-width: 1440px;
   padding: 0 $p;
 
-  @media #{$lg} {
-    padding: 0 50px;
-  }
-  @media #{$md} {
-    padding: 0 38px;
-  }
+  // == media ==
+  @media #{$laptop} {}
 
-  @media #{$sm} {
-    padding: 0 20px;
-  }
+  @media #{$tablet} {}
+
+  @media #{$mobile} {}
 }

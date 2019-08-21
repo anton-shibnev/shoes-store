@@ -1,14 +1,14 @@
 .link {
-	background-image: linear-gradient(currentColor, currentColor);
-	background-position: 100% 100%;
-	background-size: 0% 1px;
-	background-repeat: no-repeat;
-	transition: background-size .3s ease-in-out;
-	padding-bottom: 0.1em;
-	width: max-content;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 100% 100%;
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  transition: background-size .3s ease-in-out;
+  padding-bottom: 0.1em;
+  width: max-content;
 
-	&:hover {
-		background-size: 100% 1px;
-		background-position: 0% 100%;
-	}
+  &:hover {
+    background-size: 100% 1px;
+    background-position: 0% 100%;
+  }
 }

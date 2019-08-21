@@ -1,5 +1,5 @@
-import stickyHeader from './func/stickyHeader';
+// import stickyHeader from './func/stickyHeader';
 
-window.addEventListener('DOMContentLoaded', () => {
-  stickyHeader();
-});
+// window.addEventListener('DOMContentLoaded', () => {
+//   stickyHeader();
+// });

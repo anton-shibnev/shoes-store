@@ -54,21 +54,18 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin yCenter {
+@mixin y-center {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
-@mixin xCenter {
+@mixin x-center {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-@mixin trs {
-  transition: 0.3s ease-in-out;
-}
 
 @mixin hide {
   visibility: hidden;
@@ -93,71 +90,90 @@
   z-index: 1;
 }
 
-@mixin bg {
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-}
-
-@function rem($pixels, $context: $mainFontSize) {
-  @if (unitless($pixels)) {
-    $pixels: $pixels * 1px;
-  }
-
-  @if (unitless($context)) {
-    $context: $context * 1px;
-  }
-
-  @return $pixels / $context * 1rem;
-}
-
-@mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
-}
-
-@mixin pseudo($el: after) {
-  &:#{$el} {
-    content: "";
-    display: block;
-    position: absolute;
-    @content;
-  }
-}
-
-@mixin lost {
-  &:nth-last-child(n + 2) {
-    @content;
-  }
-}
-
-// -- media --
-
-@mixin media-max($width) {
-  @media screen and (max-width: $width) {
-    @content;
-  }
-}
-
-@mixin media-min($width) {
-  @media screen and (min-width: $width) {
-    @content;
-  }
-}
-
-// hide text
-
 @mixin hideText {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
 
-// not-btn
-
-@mixin not-btn {
-  cursor: pointer;
-  background-color: rgba(#fff, 0);
-  border: none;
+@mixin btn-reset {
   padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+
+@mixin pic-wrapper {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@mixin spread-block {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+@mixin bg {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin pseudo {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+@mixin btm-line($pb: 1px, $switcher: on, $bg-size: 1px) {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  transition: background-size .3s ease-in-out;
+  padding-bottom: $pb;
+  width: max-content;
+
+  @if $switcher==on {
+    background-position: 0% 100%;
+    background-size: 100% $bg-size;
+
+    &:hover {
+      background-position: 100% 100%;
+      background-size: 0% $bg-size;
+    }
+
+  }
+
+  @else if $switcher==off {
+    background-position: 100% 100%;
+    background-size: 0% $bg-size;
+
+    &:hover {
+      background-position: 0% 100%;
+      background-size: 100% $bg-size;
+    }
+  }
+
+  @content;
 }

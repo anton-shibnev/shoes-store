@@ -15,7 +15,7 @@ const PATHS = {
 };
 
 const PAGES_DIR = `${PATHS.src}/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
+const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => { return fileName.endsWith('.pug'); });
 
 module.exports = {
   // BASE config
@@ -109,7 +109,7 @@ module.exports = {
         {
           loader: 'pug-bem-plain-loader',
           options: {
-            b: 'b_',
+            b: 'bem_',
           },
         },
       ],
@@ -139,9 +139,11 @@ module.exports = {
     },
     ]),
 
-    ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/, '.html')}`,
-    })),
+    ...PAGES.map((page) => {
+      return new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/${page}`,
+        filename: `./${page.replace(/\.pug/, '.html')}`,
+      });
+    }),
   ],
 };
