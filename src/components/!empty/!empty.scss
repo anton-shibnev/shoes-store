@@ -2,7 +2,6 @@ $name: empty;
 
 .#{$name} {
   $this: &;
-  grid-area: $name;
 
   // == media ==
   @media #{$laptop} {}
