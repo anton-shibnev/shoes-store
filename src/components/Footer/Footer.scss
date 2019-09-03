@@ -1,5 +1,8 @@
-.footer {
+$name: footer;
+
+.#{$name} {
   $this: &;
+  grid-area: $name;
 
   width: 100%;
   min-height: 100px;

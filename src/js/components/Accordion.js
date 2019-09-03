@@ -1,4 +1,4 @@
-class Accordion {
+export default class Accordion {
   constructor(fatherName) {
     this.fatherName = fatherName;
   }

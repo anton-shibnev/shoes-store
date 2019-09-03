@@ -32,10 +32,8 @@
     font-size: 15px;
     margin-bottom: 20px;
     color: $mainFC;
-    @include trs;
 
     &::placeholder {
-      @include trs;
       color: #c6c6c6;
     }
 
@@ -59,7 +57,6 @@
     width: 100%;
     max-width: 300px;
     cursor: pointer;
-    @include trs;
     color: #c6c6c6;
     display: flex;
     justify-content: center;

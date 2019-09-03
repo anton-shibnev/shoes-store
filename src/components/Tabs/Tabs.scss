@@ -1,0 +1,83 @@
+$name: tabs;
+
+.#{$name} {
+  $this: &;
+  position: relative;
+
+  &__menu {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    grid-gap: 30px;
+    padding: 0 100px;
+  }
+
+  &__menu-btn {
+    @include btn-reset;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    text-transform: uppercase;
+    transition: opacity .3s ease-in-out;
+    opacity: .5;
+    padding-bottom: 20px;
+    position: relative;
+
+    &::after {
+      @include pseudo;
+      bottom: 0;
+      left: 0;
+      background-color: $dark;
+      height: 3px;
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: top left;
+      transition: transform .3s ease-in-out;
+    }
+
+    &.on {
+      opacity: 1;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    background-color: rgba($light, 0.2);
+  }
+
+  &__content-item {
+    padding: 100px;
+    width: 100%;
+
+    backface-visibility: hidden;
+
+    // hide
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    transform: translateX(-2%);
+    transition: opacity .6s ease-in-out,
+    transform .6s ease-in-out;
+
+    &.on {
+      opacity: 1;
+      transform: translateX(0);
+      position: relative;
+      visibility: visible;
+    }
+  }
+
+  // == media ==
+  @media #{$laptop} {}
+
+  @media #{$tablet} {}
+
+  @media #{$mobile} {}
+}

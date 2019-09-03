@@ -1,5 +1,5 @@
-// import stickyHeader from './func/stickyHeader';
+// import Tabs from '../../js/components/Tabs';
+import Tabs from './components/Tabs';
 
-// window.addEventListener('DOMContentLoaded', () => {
-//   stickyHeader();
-// });
+const tabs = new Tabs('tabs', 'tabs');
+tabs.init();

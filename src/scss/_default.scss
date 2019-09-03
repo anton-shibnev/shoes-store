@@ -6,6 +6,11 @@
   outline: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
+  
+  &::selection {
+    background-color: $theme-color;
+    color: #ffffff;
+  }
 }
 
 html {
@@ -25,16 +30,15 @@ body {
   overflow-anchor: none;
 }
 
-#root {
+#app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
 
-.App {
-  flex-grow: 2;
-  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header header header'
+    'main main main'
+    'footer footer footer';
 }
 
 img {
@@ -92,13 +96,6 @@ a {
     color: inherit;
     text-decoration: none;
   }
-}
-
-ul,
-li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 .container {

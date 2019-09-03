@@ -8,9 +8,7 @@ html(lang='ru')
     block title
       title title
 
-  body#root
-    .App
-      include components/Header/Header
-      .content
-        block content
+  body#app
+    include components/Header/Header
+    include components/Main/Main
     include components/Footer/Footer

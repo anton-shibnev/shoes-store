@@ -23,9 +23,12 @@ $mobile: 'screen and (max-width:767px)';
 
 // Main color
 $primary: #007bff;
-$secondary: #6c757d;
+$light: #6c757d;
 $success: #28a745;
 $danger: #dc3545;
 $warning: #ffc107;
 $info: #17a2b8;
 $dark: #343a40;
+
+// theme
+$theme-color: $info;

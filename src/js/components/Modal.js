@@ -1,8 +1,9 @@
-class Modal {
+export default class Modal {
   onPopup(popupId, delay) {
     const popup = document.getElementById(popupId);
     const inner = popup.children[0];
     const scrollbarWidth = (window.innerWidth - document.body.offsetWidth);
+    const popupCallback = popup.getAttribute('data-callback');
 
     document.body.style.paddingRight = `${scrollbarWidth}px`;
     popup.style.display = 'block';
@@ -10,7 +11,9 @@ class Modal {
     popup.classList.add('on');
     document.body.classList.add('modal-opened');
 
-    setTimeout(() => { return inner.classList.add('on'); }, delay);
+    setTimeout(() => {
+      return inner.classList.add('on');
+    }, delay);
   }
 
   offPopup(popupId, delay) {
@@ -26,7 +29,7 @@ class Modal {
     }, delay);
 
     setTimeout(() => popup.style.display = 'none', delay * 2);
-  };
+  }
 
   init() {
     const $btns = [...document.querySelectorAll('[btn-popup]')];
@@ -65,7 +68,4 @@ class Modal {
       });
     });
   }
-};
-
-const modal = new Modal();
-modal.init();
+}

@@ -1,11 +1,9 @@
-$name: header;
+$name: main;
 
 .#{$name} {
   $this: &;
   grid-area: $name;
-
-  min-height: 100px;
-  background: $dark;
+  padding: 50px 0;
 
   // == media ==
   @media #{$laptop} {}

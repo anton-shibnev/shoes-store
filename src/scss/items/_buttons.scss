@@ -7,7 +7,6 @@
   align-items: center;
   flex-shrink: 0;
   width: max-content;
-  @include trs;
 
   &--danger {
     background-color: $danger;

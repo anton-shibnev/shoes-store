@@ -4,8 +4,16 @@ block title
   title index
 
 block content
+
+  - const listOfPages = 
+  -  {
+  -   'main page': '/main.html', 
+  -   'poop': '/poop.html',
+  -};
+
   .container
-    h3 list of pages
+    h1 list of pages
     ol
-      li
-        a(href='./test.html') test
+      each name, link in listOfPages
+        li
+          a(href=name)= link

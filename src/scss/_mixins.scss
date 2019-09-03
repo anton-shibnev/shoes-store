@@ -102,8 +102,8 @@
   background: none;
   border: none;
   outline: none;
+  cursor: pointer;
 }
-
 
 @mixin pic-wrapper {
   img {
@@ -181,4 +181,23 @@
 @mixin grid-row($size: 100px) {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+}
+
+@mixin custom-list($type: '-', $padding: 1rem) {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: $padding;
+
+    &:after {
+      content: $type;
+      position: absolute;
+      left: 0;
+    }
+  }
 }
