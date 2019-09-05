@@ -8,12 +8,12 @@ block content
   - const listOfPages = 
   -  {
   -   'main page': '/main.html', 
-  -   'poop': '/poop.html',
-  -};
+  -   'ui': '/ui.html',
+  - };
 
   .container
     h1 list of pages
     ol
-      each name, link in listOfPages
+      each link, name in listOfPages
         li
-          a(href=name)= link
+          a(href=link)= name

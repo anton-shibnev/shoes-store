@@ -1,10 +1,11 @@
 ## TODO
 
+- [ ] ui page
 - [ ] form for everything
 - [ ] slider glide
-- [ ] indi js css for page
 - [ ] scss lint
 - [ ] svg sprite???
 - [ ] rewrite classes
 - [ ] parallax pic
 - [ ] custom scroll
+- [ ] indi js css for page

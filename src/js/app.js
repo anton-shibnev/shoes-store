@@ -1,5 +1,5 @@
-// import Tabs from '../../js/components/Tabs';
-import Tabs from './components/Tabs';
+const importAll = (r) => { r.keys().forEach(r); };
 
-const tabs = new Tabs('tabs', 'tabs');
-tabs.init();
+document.addEventListener('DOMContentLoaded', () => {
+  importAll(require.context('../components/', true, /\.js$/));
+});
