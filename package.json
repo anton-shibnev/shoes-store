@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./configs/webpack.dev.conf.js --open chrome",
+    "dev": "webpack-dev-server --config ./configs/webpack.dev.conf.js --open",
     "build": "webpack --config ./configs/webpack.build.conf.js",
     "watch": "webpack --config ./configs/webpack.build.conf.js --watch"
   },
