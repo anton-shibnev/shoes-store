@@ -1,0 +1,247 @@
+$name: mob-menu-modal;
+
+.#{$name} {
+  $this: &;
+
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(#fff, 0);
+  margin: 0;
+
+  transition: background-color .3s ease-in-out;
+  z-index: 100;
+
+  &.on {
+    background-color: rgba(#fff, .8);
+  }
+
+  &__inner {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 25px;
+
+    background-color: #fff;
+    box-shadow: 0px 0px 120px rgba(39, 41, 49, 0.5);
+    width: 235px;
+    transition: transform .4s ease-in-out;
+    transform: translateX(150%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &.on {
+      transform: translateX(0);
+    }
+  }
+
+  &__close {
+    @include btn-reset;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    align-self: flex-end;
+    margin-bottom: 50px;
+
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    svg {
+      @include svg-icon;
+      stroke: $color;
+      stroke-width: 2px;
+      pointer-events: none;
+      transition: stroke .3s ease-in-out;
+    }
+  }
+
+  &__icons-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 70px;
+    width: 100%;
+
+    &:hover {
+      #{$this}__icon-btn {
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__icon-btn {
+    @include btn-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    transition: opacity .2s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+
+    &--cart {
+      margin-right: 10px;
+
+      &::after {
+        $w: 20px;
+        content: attr(data-content);
+        display: block;
+        position: absolute;
+        top: -50%;
+        right: -50%;
+
+        width: auto;
+        height: auto;
+        min-width: $w;
+        min-height: $w;
+
+        background-color: $danger;
+        border-radius: 50%;
+
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 20px;
+        color: #fff;
+
+        @include flex-center;
+        text-align: center;
+      }
+    }
+
+    svg {
+      transition:
+        fill .2s ease-in-out;
+      max-height: 21px;
+      max-width: 20px;
+    }
+  }
+
+  &__nav {
+    text-align: right;
+  }
+
+  &__nav-item {
+    color: $color;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__search {
+    position: relative;
+    margin-top: auto;
+
+    &.focus {
+      #{$this}__label-search {
+        &::after {
+          left: -100%;
+        }
+      }
+
+      #{$this}__search-btn {
+        svg {
+          fill: $color;
+        }
+      }
+    }
+  }
+
+  &__label-search {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 200%;
+      bottom: 0;
+      height: 2px;
+      transition: left .5s ease-in-out;
+      background:
+        linear-gradient(to right,
+          rgba($color, .2) 50%,
+          $color 50%);
+      left: 0;
+    }
+  }
+
+  &__search-btn {
+    @include btn-reset;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      @include svg-icon;
+      transition: fill .5s ease-in-out;
+      fill: rgba($color, 0.5);
+    }
+  }
+
+  &__input-search {
+    border: none;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    outline: none;
+    padding: 10px 50px 10px 10px;
+    width: 100%;
+    caret-color: $color;
+
+    &::placeholder {
+      color: rgba($color, 0.5);
+      transition: opacity .2s ease-in-out;
+    }
+
+    &:focus {
+      #{$this}__label-input {
+        &::after {
+          left: -100%;
+        }
+      }
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+
+  // == media ==
+  @media #{$laptop} {}
+
+  @media #{$tablet} {}
+
+  @media #{$mobile} {}
+}

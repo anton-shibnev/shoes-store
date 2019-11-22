@@ -1,0 +1,43 @@
+$name: buty-text;
+
+.#{$name} {
+  $this: &;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+
+  text {
+    fill: $color;
+    stroke: $color;
+    font-family: 'Rubik';
+    stroke-width: 2px;
+    font-size: 40px;
+    font-weight: 700;
+    font-style: italic;
+
+    transition:
+      fill .3s ease-in-out,
+      stroke .3s ease-in-out;
+  }
+
+  &:hover {
+    text {
+      fill: #ffffff;
+    }
+  }
+
+
+  // == media ==
+  @media #{$laptop} {
+
+    text {
+      font-size: 30px;
+    }
+  }
+
+  @media #{$tablet} {}
+
+  @media #{$mobile} {}
+}

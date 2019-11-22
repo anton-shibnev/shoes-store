@@ -1,0 +1,268 @@
+$name: brands-slider;
+
+.#{$name} {
+  $this: &;
+
+  padding-top: 150px;
+  position: relative;
+
+  &::after {
+    @include pseudo;
+    @include spread;
+    background-color: $light;
+    z-index: -1;
+    height: calc(100% + 150px);
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  &__track {
+    overflow: hidden;
+  }
+
+  &__inner {
+    position: relative;
+    width: calc(100% - 220px);
+    margin: 0 auto;
+  }
+
+  &__slide {
+    padding: 0 15px 100px 15px;
+  }
+
+  &__slide-wrap {
+    position: relative;
+
+    &:hover {
+      #{$this}__card-boot {
+        img {
+          transform: rotate(11deg) translateY(-2%) translateX(-1%);
+        }
+
+        &::before {
+          width: 55%;
+          filter: blur(1.2em);
+          left: 55%;
+        }
+      }
+    }
+  }
+
+  &__slide-link {
+    @include spread;
+    z-index: 5;
+  }
+
+  &__card {
+    position: relative;
+    padding-top: 55%;
+  }
+
+  &__card-stand {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    box-shadow: 0px 15px 10px 0px rgba($color, 0.03);
+    position: relative;
+  }
+
+  &__card-logo {
+    @include flex-center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+  }
+
+  &__arrows {
+    width: calc(100% + 200px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  &__arrow {
+    @include btn-reset;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    pointer-events: all;
+
+    &:hover {
+      svg {
+        stroke: $theme-color;
+      }
+    }
+
+    svg {
+      @include svg-icon;
+      pointer-events: none;
+      stroke: $color;
+      stroke-width: 2px;
+      transition: stroke .2s ease-in-out;
+      stroke-linecap: round;
+    }
+  }
+
+  &__card-boot {
+    max-width: 384px;
+    max-height: 384px;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      transform: rotate(10deg);
+      transition: transform .4s ease-in-out;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 60%;
+      height: 10px;
+      background: #272931;
+      opacity: 0.6;
+      filter: blur(1em);
+      border-radius: 50%;
+      left: 50%;
+      bottom: 15%;
+      transform: translateX(-50%);
+
+      transition: all .4s ease-in-out;
+    }
+  }
+
+  // == media ==
+  @media #{$laptop} {
+    padding-top: 100px;
+
+    &__arrow {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__card-stand {
+      height: 180px;
+    }
+
+    
+    &__card {
+      padding-top: 60%;
+    }
+
+  }
+
+  @media #{$tablet} {
+    padding-top: 60px;
+    margin-bottom: 30px;
+
+    &__inner {
+      width: calc(100% + 18px);
+      margin: 0 -9px;
+    }
+
+    &__arrows {
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      position: static;
+      transform: none;
+    }
+
+    &__slide {
+
+      padding: 0 9px 30px;
+
+      &.glide__slide--active {
+        #{$this}__card-boot {
+          img {
+            transform: rotate(11deg) translateY(-5%) translateX(-2%);
+          }
+
+          &::before {
+            width: 55%;
+            filter: blur(1.2em);
+            left: 55%;
+          }
+        }
+      }
+    }
+
+    &__card-logo {
+      img {
+        max-width: 65px;
+      }
+    }
+
+    &__card-stand {
+      height: 130px;
+    }
+
+    &__card {
+      padding-top: 65%;
+    }
+
+    &__card-boot {
+      img {
+        transform: rotate(10deg);
+      }
+
+      &::before {
+        width: 60%;
+        filter: blur(0.9em);
+        left: 50%;
+      }
+    }
+
+    &__arrow {
+      width: 30px;
+      height: 30px;
+
+      &:hover {
+        svg {
+          stroke: $color;
+        }
+      }
+    }
+  }
+
+  @media #{$mobile} {
+    margin-bottom: 10px;
+
+    &__title {
+      font-size: 21px;
+      line-height: 25px;
+    }
+
+    &__inner {
+      width: calc(100% - 50px);
+      margin: 0 auto;
+    }
+
+    &__arrows {
+      width: calc(100% + 70px);
+      position: absolute;
+      transform: translate(-50%, 50%);
+    }
+
+    &__card-stand {
+      height: 130px;
+    }
+
+    &__slide {
+      padding: 0 10px 30px;
+    }
+  }
+}

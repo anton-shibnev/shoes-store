@@ -1,0 +1,40 @@
+.BEM_hero-slider.glide#heroSlider
+  .__soc-list
+    .container
+      include ../soc-list/soc-list
+
+  .__arrows.glide__arrows(data-glide-el="controls")
+    .__counter.glide__counter
+    button.__arrow.--left.glide__arrow.glide__arrow--left(data-glide-dir='<')
+      include ../../static/images/svg/arrow-left.svg
+    button.__arrow.--right.glide__arrow.glide__arrow--right(data-glide-dir='>')
+      include ../../static/images/svg/arrow-right.svg
+
+  .__track(data-glide-el='track')
+    .__slides.glide__slides
+      .__slide.--bg.glide__slide
+        .__wrap-bg
+          img.__slide-bg(src='assets/images/main-slider/main-slider_2.jpg' alt='')
+        .__num 01
+        .container
+          .__slide-row
+            .__slide-title Dr.Martens Tattoo Collection
+            .__slide-desc <strong>Converse</strong> — американская компания, производящая обувь с начала XX века и наиболее известная своими кедами Chuck Taylor All-Star. Контролируется компанией Nike.
+
+      .__slide.--bg.glide__slide
+        .__wrap-bg
+          img.__slide-bg(src='assets/images/main-slider/main-slider_1.jpg' alt='')
+        .__num 02
+        .container
+          .__slide-row
+            .__slide-title Dr.Martens Tattoo Collection
+            .__slide-desc <strong>Converse</strong> — американская компания, производящая обувь с начала XX века и наиболее известная своими кедами Chuck Taylor All-Star. Контролируется компанией Nike.
+
+      .__slide.--bg.glide__slide
+        .__wrap-bg
+          img.__slide-bg(src='assets/images/main-slider/main-slider_3.jpg' alt='')
+        .__num 03
+        .container
+          .__slide-row
+            .__slide-title Dr.Martens Tattoo Collection
+            .__slide-desc <strong>Converse</strong> — американская компания, производящая обувь с начала XX века и наиболее известная своими кедами Chuck Taylor All-Star. Контролируется компанией Nike.

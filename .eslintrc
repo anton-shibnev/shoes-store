@@ -2,9 +2,10 @@
   "extends": "airbnb/base",
   "rules": {
     "arrow-body-style": ["error", "always"],
+    "linebreak-style": 0
   },
   "globals": {
     "document": false,
-    "window": false,
+    "window": false
   }
 }

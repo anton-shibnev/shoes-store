@@ -3,14 +3,181 @@ $name: header;
 .#{$name} {
   $this: &;
   grid-area: $name;
+  position: relative;
+  z-index: 10;
 
-  min-height: 100px;
-  background: $dark;
+
+  .burger {
+    &__line {
+      background-color: #fff;
+    }
+  }
+  
+
+  #{$this}__icon-btn {
+    svg > * {
+      fill: #fff;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    position: relative;
+  }
+
+  &__logo-link {
+    @include spread;
+  }
+
+  &__logo-pic {
+    width: 100px;
+    height: 76px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+  }
+
+  &__nav-item {
+    @include btn-reset;
+    padding: 35px 0;
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #fff;
+    font-weight: 400;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &:hover,
+    &.on {
+      color: #fff;
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #fff;
+      transition: width 0.4s ease-in-out;
+    }
+  }
+
+  &__icons-row {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    &:hover {
+      #{$this}__icon-btn {
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__icon-btn {
+    @include btn-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    transition: opacity 0.2s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+
+    &--cart {
+      margin-right: 10px;
+
+      &::after {
+        $w: 20px;
+        content: attr(data-content);
+        display: block;
+        position: absolute;
+        top: -50%;
+        right: -50%;
+
+        width: auto;
+        height: auto;
+        min-width: $w;
+        min-height: $w;
+
+        background-color: $danger;
+        border-radius: 50%;
+
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 20px;
+        color: #fff;
+
+        @include flex-center;
+        text-align: center;
+      }
+    }
+
+    svg {
+      @include svg-icon;
+      transition: fill 1s ease-in-out;
+    }
+  }
 
   // == media ==
-  @media #{$laptop} {}
+  @media #{$laptop} {
+    &__nav-item {
+      font-size: 16px;
+      line-height: 1;
+      padding: 25px 0;
+    }
 
-  @media #{$tablet} {}
+    &__logo-pic {
+      width: 90px;
+      height: auto;
+    }
 
-  @media #{$mobile} {}
+    &__icon-btn {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  @media #{$tablet} {
+    &__row {
+      padding-top: 13px;
+    }
+
+    &__nav-item,
+    &__icons-row {
+      display: none;
+    }
+  }
+
+  @media #{$mobile} {
+    &__row {
+      padding-top: 0;
+    }
+  }
 }

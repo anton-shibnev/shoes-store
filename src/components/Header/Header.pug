@@ -1,6 +1,21 @@
-header.bem_header
+header#header.BEM_header
   .container
-    .__inner
+    .__row
       .__logo
-        a(href='#').spread
-        img(src='', alt='')
+        a.__logo-link(href='#')
+        img.__logo-pic(src='assets/images/logo.png' alt='')
+      nav.__nav
+        button.__nav-item(btn-popup='storeNav') Магазин
+        a.__nav-item(href='#') Fab lab
+        a.__nav-item(href='#') Fab to Go
+        a.__nav-item(href='#') Блог
+
+      .__icons-row
+        button.__icon-btn.--search(type='button' btn-popup='searchModal')
+          include ../../static/images/svg/search.svg
+        a.__icon-btn.--heart(href='#')
+          include ../../static/images/svg/heart.svg
+        a.__icon-btn.--person(href='#')
+          include ../../static/images/svg/person.svg
+        button.__icon-btn.--cart(type='button' data-content='3' btn-popup='cartModal')
+          include ../../static/images/svg/cart.svg

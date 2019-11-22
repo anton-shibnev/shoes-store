@@ -1,0 +1,45 @@
+aside.BEM_cart-modal#cartModal(data-delay='300')
+  .__inner#cartModalScroll
+    .__wrap
+      button.__close.close(type='button')
+        include ../../static/images/svg/close.svg
+      .__title Корзина
+      .__box
+        .__count
+          | всего 
+          span.__count-num 3 
+          span.__count-ending товара
+        .__cart
+          a.__cart-link(href='#')
+          img.__cart-pic(src='assets/images/product-card/product-card_1.jpg' alt='')
+          .__cart-txt
+            .__cart-title Sk8-Hi
+            .__cart-desc Black
+            .__cart-size 32
+            .__cart-price 7090₽
+          button.__cart-close(type='button')
+            include ../../static/images/svg/close.svg
+        .__cart
+          a.__cart-link(href='#')
+          img.__cart-pic(src='assets/images/product-card/product-card_2.jpg' alt='')
+          .__cart-txt
+            .__cart-title Shield Tank
+            .__cart-desc Black
+            .__cart-size S
+            .__cart-price 1490₽
+          button.__cart-close(type='button')
+            include ../../static/images/svg/close.svg
+        .__cart
+          a.__cart-link(href='#')
+          img.__cart-pic(src='assets/images/product-card/product-card_3.jpg' alt='')
+          .__cart-txt
+            .__cart-title Form Hood
+            .__cart-desc Skull Grey
+            .__cart-size XS
+            .__cart-price 4490₽
+          button.__cart-close(type='button')
+            include ../../static/images/svg/close.svg
+      .__sum
+        .__sum-txt ИТОГО:
+        .__sum-num 13070.00₽
+      a.__out(href='#') Перейти к покупке

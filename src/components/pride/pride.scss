@@ -1,0 +1,104 @@
+$name: pride;
+
+.#{$name} {
+  $this: &;
+
+  margin-bottom: 100px;
+
+  &__row {
+    @include grid-row(300px);
+    grid-gap: 30px;
+  }
+
+  &__link {
+    @include spread;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    padding: 40px;
+
+    box-shadow: 0px 20px 30px rgba(39, 41, 49, 0.2);
+    background-color: #F3F3F3;
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 10px 10px rgba(39, 41, 49, 0.2);
+    }
+  }
+
+  &__box-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    margin-right: 20px;
+
+    position: relative;
+
+    svg {
+      @include svg-icon;
+    }
+  }
+
+  &__box-desc {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  // == media ==
+  @media #{$laptop} {
+    margin-bottom: 70px;
+
+    &__box-desc {
+      font-size: 15px;
+    }
+
+    &__box {
+      padding: 25px;
+    }
+
+    &__row {
+      @include grid-row(250px);
+    }
+  }
+
+  @media #{$tablet} {
+    margin-bottom: 50px;
+
+    &__row {
+      grid-gap: 18px;
+      @include grid-row(300px);
+    }
+
+    &__box {
+      padding: 30px;
+    }
+
+    &__box-desc {
+      font-size: 18px;
+    }
+
+  }
+
+  @media #{$mobile} {
+
+    &__row {
+      width: 100%;
+      margin: 0;
+    }
+
+    &__box {
+      width: 100%;
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

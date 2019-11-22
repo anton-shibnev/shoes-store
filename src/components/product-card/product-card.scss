@@ -1,0 +1,272 @@
+$name: product-card;
+
+.#{$name} {
+  $this: &;
+
+  width: 100%;
+  height: 468px;
+
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+
+  box-shadow: 0px 20px 30px rgba($color, 0.05);
+  transition: box-shadow 0.3s ease-in-out;
+
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+
+  &:hover {
+    box-shadow: 5px 20px 20px rgba($color, 0.1);
+
+    #{$this}__btn {
+      opacity: 1;
+    }
+  }
+
+  &__link {
+    @include spread;
+    z-index: 1;
+  }
+
+  &__pic-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__pic {
+    @include spread;
+    object-fit: cover;
+    backface-visibility: hidden;
+
+    transition: 0.4s ease-in-out;
+  }
+
+  &__wrap-hashtag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+  }
+
+  &__hashtag {
+    z-index: 5;
+    color: rgba(#000, 0.1);
+    user-select: none;
+
+    position: absolute;
+    right: 30px;
+    top: 0;
+
+    width: auto;
+    text-align: right;
+    padding: 10px 0;
+
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+    right: 0;
+
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &__desc {
+    font-size: 17px;
+    line-height: 20px;
+    text-align: right;
+    grid-row: span 2 / auto;
+  }
+
+  &__price {
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 36px;
+    align-self: end;
+  }
+
+  &__price-old {
+    color: rgba($color, 0.3);
+    font-weight: 500;
+    font-size: 13px;
+    text-decoration: line-through;
+    position: absolute;
+    top: -45%;
+  }
+
+  &__txt-box {
+    padding: 30px 40px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  &__wrap-btns {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: grid;
+    grid-gap: 10px;
+
+    z-index: 5;
+  }
+
+  &__btn {
+    @include btn-reset;
+    width: 23px;
+    height: 23px;
+    position: relative;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    svg {
+      opacity: 1;
+      @include svg-icon;
+      fill: rgba(39, 41, 49, 0.2);
+      transition: fill 0.2s ease-in-out;
+    }
+
+    &--fast-look {
+      &:hover {
+        #{$this}__tooltip {
+          opacity: 1;
+          transform: translateY(-50%);
+        }
+      }
+
+      &.on {
+        svg > *{
+          fill: $theme-color;
+        }
+      }
+    }
+
+    &--like {
+      &.on {
+        opacity: 1 !important;
+
+        svg > * {
+          fill: $danger;
+        }
+      }
+    }
+  }
+
+  &__tooltip {
+    background-color: #fff;
+    padding: 10px;
+    position: absolute;
+    max-width: 190px;
+
+    pointer-events: none;
+
+    top: 50%;
+    left: calc(100% - 190px);
+
+    transform: translateY(-50%);
+
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    // hide
+    opacity: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      width: 15px;
+      height: 15px;
+      background-color: inherit;
+      right: -7px;
+    }
+  }
+
+  // == media ==
+  @media #{$laptop} {
+    height: 350px;
+
+    &__txt-box {
+      padding: 20px 10px;
+    }
+
+    &__desc {
+      font-size: 14px;
+      line-height: 17px;
+      margin-bottom: 12px;
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &__price {
+      font-size: 18px;
+    }
+
+    &__hashtag {
+      font-size: 15px;
+      transform: rotate(180deg) translateX(5px);
+    }
+  }
+
+  @media #{$tablet} {
+    &__txt-box {
+      display: block;
+    }
+
+    &__desc {
+      text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__desc-line {
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+
+    &__price {
+      margin-top: auto;
+      margin-bottom: -10px;
+    }
+
+    &__pic {
+      bottom: auto;
+      height: auto;
+      min-height: 100%;
+    }
+
+    &__wrap-btns {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    height: 250px;
+  }
+
+  @media #{$mobile} {
+    &__hashtag {
+      transform: rotate(180deg) translateX(10px);
+    }
+  }
+}

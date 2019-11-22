@@ -1,6 +1,5 @@
 const moveObj = (elClass, toClass, pos) => {
-  const winWidth = document.documentElement.clientWidth
-    || document.body.clientWidth;
+  const winWidth = document.documentElement.clientWidth || document.body.clientWidth;
 
   if (winWidth >= 1280) return;
 

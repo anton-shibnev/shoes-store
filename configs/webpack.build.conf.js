@@ -19,7 +19,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
         options: {
           mozjpeg: {
             progressive: true,
-            quality: 70,
+            quality: 65,
           },
           optipng: {
             enabled: true,

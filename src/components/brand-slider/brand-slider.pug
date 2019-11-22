@@ -1,0 +1,46 @@
+section.BEM_brands-slider
+  .container
+    .__title.h3 Категории и бренды
+
+    .__inner.glide#brandsSlider
+
+      .__track(data-glide-el='track')
+
+        .__slides.glide__slides
+
+          .__slide.glide__slide
+            .__slide-wrap
+              a.__slide-link(href='#')
+              .__card
+                .__card-boot
+                  img(src='assets/images/brands-slider/brands-slider_1.png' alt='')
+                .__card-stand
+                  .__card-logo
+                    img(src='assets/images/brand-logos/vans.svg' alt='')
+
+          .__slide.glide__slide
+            .__slide-wrap
+              a.__slide-link(href='#')
+              .__card
+                .__card-boot
+                  img(src='assets/images/brands-slider/brands-slider_2.png' alt='')
+                .__card-stand
+                  .__card-logo
+                    img(src='assets/images/brand-logos/fila.svg' alt='')
+
+          .__slide.glide__slide
+            .__slide-wrap
+              a.__slide-link(href='#')
+              .__card
+                .__card-boot
+                  img(src='assets/images/brands-slider/brands-slider_3.png' alt='')
+                .__card-stand
+                  .__card-logo
+                    img(src='assets/images/brand-logos/fila.svg' alt='')
+
+      .__arrows.glide__arrows(data-glide-el="controls")
+        button.__arrow.--left.glide__arrow.glide__arrow--left(data-glide-dir='<')
+          include ../../static/images/svg/arrow-left.svg
+        button.__arrow.--right.glide__arrow.glide__arrow--right(data-glide-dir='>')
+          include ../../static/images/svg/arrow-right.svg
+          

@@ -1,0 +1,58 @@
+$name: soc-list;
+
+.#{$name} {
+  $this: &;
+
+  &__wrap {
+    &:hover {
+      #{$this}__item {
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--horizon {
+      display: flex;
+
+      #{$this}__item {
+        &:nth-child(n) {
+          margin-bottom: 0;
+        }
+
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: relative;
+    transition: opacity .3s ease-in-out;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    svg,
+    object {
+      @include svg-icon;
+      fill: #fff;
+    }
+  }
+
+  // == media ==
+  @media #{$laptop} {}
+
+  @media #{$tablet} {
+    
+  }
+
+  @media #{$mobile} {}
+}

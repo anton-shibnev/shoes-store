@@ -3,8 +3,6 @@ $name: empty;
 .#{$name} {
   $this: &;
   position: relative;
-  margin-bottom: 100px;
-  // grid-area: $name;
 
   // == media ==
   @media #{$laptop} {}

@@ -1,0 +1,138 @@
+$name: offer-slider;
+
+.#{$name} {
+  $this: &;
+  padding-bottom: 100px;
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: 100px;
+  }
+
+  &__slide {
+    padding: 0 15px 100px;
+    max-width: 370px;
+  }
+
+  &__track {
+    position: relative;
+    margin: 0 -15px;
+
+    // &::before {
+    //   content: '';
+    //   display: block;
+
+    //   width: 50%;
+    //   height: calc(100% + 100px);
+
+    //   position: absolute;
+    //   top: 50%;
+    //   left: -50%;
+    //   transform: translateY(-50%);
+    //   background: #fff;
+    //   z-index: 10;
+    // }
+  }
+
+  &__arrows {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__arrow {
+    @include btn-reset;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    pointer-events: all;
+
+    transition: opacity .3s ease-in-out;
+
+    &:hover {
+      svg {
+        stroke: $theme-color;
+      }
+    }
+
+    svg {
+      @include svg-icon;
+      pointer-events: none;
+      stroke: $color;
+      stroke-width: 2px;
+      transition: stroke .2s ease-in-out;
+      stroke-linecap: round;
+    }
+
+    &.off {
+      opacity: 0.1;
+      pointer-events: none;
+    }
+  }
+
+  &__btn-out {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+  }
+
+  // == media ==
+  @media #{$laptop} {
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+
+    &__title {
+      margin-bottom: 45px;
+    }
+
+    &__btn-out {
+      font-size: 16px;
+    }
+  }
+
+  @media #{$tablet} {
+    &__arrows {
+      bottom: 15px;
+    }
+
+    &__arrow {
+      &:hover {
+        svg {
+          stroke: $color;
+        }
+      }
+    }
+
+    &__track {
+      margin: 0 -9px;
+      width: calc(100% + 18px);
+    }
+
+    &__slide {
+      padding: 0 9px 70px;
+    }
+
+  }
+
+  @media #{$mobile} {
+    &__track {
+      margin: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    &__btn-out {
+      min-width: 200px;
+    }
+
+    &__slide {
+      padding: 0 0 90px;
+    }
+  }
+}

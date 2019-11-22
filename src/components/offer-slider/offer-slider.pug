@@ -1,0 +1,16 @@
+section.BEM_offer-slider
+  .container
+    .__title.h3 Популярные товары
+    .__inner.glide#offerSlider
+
+      .__track(data-glide-el='track')
+        .__slides.glide__slides
+          - for (let i = 0; i <= 6; i++)
+            .__slide.glide__slide
+              include ../product-card/product-card
+
+      .__arrows.glide__arrows(data-glide-el="controls")
+        button.__arrow.--left.glide__arrow.glide__arrow--left(data-glide-dir='<')
+          include ../../static/images/svg/arrow-left.svg
+        button.__arrow.--right.glide__arrow.glide__arrow--right(data-glide-dir='>')
+          include ../../static/images/svg/arrow-right.svg

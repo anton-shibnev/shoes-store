@@ -1,0 +1,360 @@
+include ../buty-text/buty-text
+
+nav.BEM_store-nav#storeNav(data-delay='500')
+  .__inner#storeNavInner
+    .__top
+      .container
+        .__top-row
+          menu.__menu
+            .__menu-tab
+              button.__menu-btn.on(store-menu='storeContent1') Женское
+            .__menu-tab
+              button.__menu-btn(store-menu='storeContent2') Мужское
+            .__menu-tab
+              button.__menu-btn(store-menu='storeContent3') Детское
+            .__menu-tab
+              button.__menu-btn(store-menu='storeContent4') Sale
+          button.__close.close(type='button')
+            include ../../static/images/svg/close.svg
+    .__wrapper#storeNavScroll
+      .container
+        .__content.on#storeContent1
+          .__content-row
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Обувь
+                li.__list-item
+                  a.__list-link(href='#') Ботинки
+                li.__list-item 
+                  a.__list-link(href='#') Ботильоны
+                li.__list-item 
+                  a.__list-link(href='#') Сапоги
+                li.__list-item  
+                  a.__list-link(href='#') Кеды
+                li.__list-item 
+                  a.__list-link(href='#') Кроссовки
+                li.__list-item
+                  a.__list-link(href='#') Крипперы
+                li.__list-item
+                  a.__list-link(href='#') Туфли 
+                li.__list-item
+                  a.__list-link(href='#') Топ-сайдеры
+                li.__list-item
+                  a.__list-link(href='#') Летняя обувь
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Одежда
+                li.__list-item
+                  a.__list-link(href='#') Куртки
+                li.__list-item 
+                  a.__list-link(href='#') Свитшоты
+                li.__list-item 
+                  a.__list-link(href='#') Худи
+                li.__list-item  
+                  a.__list-link(href='#') Кеды
+                li.__list-item 
+                  a.__list-link(href='#') Рубашки 
+                li.__list-item
+                  a.__list-link(href='#') Футболки
+                li.__list-item
+                  a.__list-link(href='#') Платья 
+                li.__list-item
+                  a.__list-link(href='#') Брюки
+                li.__list-item
+                  a.__list-link(href='#') Джынсы 
+                li.__list-item
+                  a.__list-link(href='#') Леггинсы 
+                li.__list-item
+                  a.__list-link(href='#') Шорты
+                li.__list-item
+                  a.__list-link(href='#') Платья 
+                li.__list-item
+                  a.__list-link(href='#') Брюки
+                li.__list-item
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Аксессуары
+                li.__list-item
+                  a.__list-link(href='#') Ботинки
+                li.__list-item 
+                  a.__list-link(href='#') Ботильоны
+                li.__list-item 
+                  a.__list-link(href='#') Сапоги
+                li.__list-item  
+                  a.__list-link(href='#') Кеды
+                li.__list-item 
+                  a.__list-link(href='#') Кроссовки
+                li.__list-item
+                  a.__list-link(href='#') Крипперы
+                li.__list-item
+                  a.__list-link(href='#') Туфли 
+                li.__list-item
+                  a.__list-link(href='#') Топ-сайдеры
+                li.__list-item
+                  a.__list-link(href='#') Летняя обувь
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Доски
+                li.__list-item
+                  a.__list-link(href='#') Ботинки
+                li.__list-item 
+                  a.__list-link(href='#') Ботильоны
+                li.__list-item 
+                  a.__list-link(href='#') Сапоги
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Подборки
+                li.__list-item
+                  a.__list-link(href='#') Лето 2019
+                li.__list-item 
+                  a.__list-link(href='#') Активный отдых
+                li.__list-item 
+                  a.__list-link(href='#') Панк-рок
+                li.__list-item  
+                  a.__list-link(href='#') Скинхед
+                li.__list-item 
+                  a.__list-link(href='#') стартерпак 
+                li.__list-item
+                  a.__list-link(href='#') Верни мне мой 2007 
+                li.__list-item
+                  a.__list-link(href='#') Сентябрь горит
+          .__future-box
+            a.__buty-text(href='#')
+              +buty-text('CLOTHING')
+            a.__buty-text(href='#')
+              +buty-text('ACCESSORIES')
+            .__featured
+              .__featured-title featured
+              .__c-box
+                .__card
+                  a.__card-link(href='#')
+                  img.__card-pic(src='assets/images/featured/featured_1.jpg' alt='')
+                  .__card-desc Лукбук весна 2019
+                .__card
+                  a.__card-link(href='#')
+                  img.__card-pic(src='assets/images/featured/featured_1.jpg' alt='')
+                  .__card-desc SS 2019
+
+        .__content#storeContent2
+          .__content-row
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Подборки
+                li.__list-item
+                  a.__list-link(href='#') Лето 2019
+                li.__list-item 
+                  a.__list-link(href='#') Активный отдых
+                li.__list-item 
+                  a.__list-link(href='#') Панк-рок
+                li.__list-item  
+                  a.__list-link(href='#') Скинхед
+                li.__list-item 
+                  a.__list-link(href='#') стартерпак 
+                li.__list-item
+                  a.__list-link(href='#') Верни мне мой 2007 
+                li.__list-item
+                  a.__list-link(href='#') Сентябрь горит
+          .__future-box
+            a.__buty-text(href='#')
+              //- +buty-text('CLOTHING')
+            a.__buty-text(href='#')
+              //- +buty-text('ACCESSORIES')
+            .__featured
+              .__featured-title featured
+              .__c-box
+                .__card
+                  a.__card-link(href='#')
+                  img.__card-pic(src='assets/images/featured/featured_1.jpg' alt='')
+                  .__card-desc Лукбук весна 2019
+
+        .__content#storeContent3
+          .__content-row
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Обувь
+                li.__list-item
+                  a.__list-link(href='#') Ботинки
+                li.__list-item 
+                  a.__list-link(href='#') Ботильоны
+                li.__list-item 
+                  a.__list-link(href='#') Сапоги
+                li.__list-item  
+                  a.__list-link(href='#') Кеды
+                li.__list-item 
+                  a.__list-link(href='#') Кроссовки
+                li.__list-item
+                  a.__list-link(href='#') Крипперы
+                li.__list-item
+                  a.__list-link(href='#') Туфли 
+                li.__list-item
+                  a.__list-link(href='#') Топ-сайдеры
+                li.__list-item
+                  a.__list-link(href='#') Летняя обувь
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Одежда
+                li.__list-item
+                  a.__list-link(href='#') Куртки
+                li.__list-item 
+                  a.__list-link(href='#') Свитшоты
+                li.__list-item 
+                  a.__list-link(href='#') Худи
+                li.__list-item  
+                  a.__list-link(href='#') Кеды
+                li.__list-item 
+                  a.__list-link(href='#') Рубашки 
+                li.__list-item
+                  a.__list-link(href='#') Футболки
+                li.__list-item
+                  a.__list-link(href='#') Платья 
+                li.__list-item
+                  a.__list-link(href='#') Брюки
+                li.__list-item
+                  a.__list-link(href='#') Джынсы 
+                li.__list-item
+                  a.__list-link(href='#') Леггинсы 
+                li.__list-item
+                  a.__list-link(href='#') Шорты
+                li.__list-item
+                  a.__list-link(href='#') Платья 
+                li.__list-item
+                  a.__list-link(href='#') Брюки
+                li.__list-item
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Доски
+                li.__list-item
+                  a.__list-link(href='#') Ботинки
+                li.__list-item 
+                  a.__list-link(href='#') Ботильоны
+                li.__list-item 
+                  a.__list-link(href='#') Сапоги
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Подборки
+                li.__list-item
+                  a.__list-link(href='#') Лето 2019
+                li.__list-item 
+                  a.__list-link(href='#') Активный отдых
+                li.__list-item 
+                  a.__list-link(href='#') Панк-рок
+                li.__list-item  
+                  a.__list-link(href='#') Скинхед
+                li.__list-item 
+                  a.__list-link(href='#') стартерпак 
+                li.__list-item
+                  a.__list-link(href='#') Верни мне мой 2007 
+                li.__list-item
+                  a.__list-link(href='#') Сентябрь горит
+          .__future-box
+            a.__buty-text(href='#')
+              //- +buty-text('CLOTHING')
+            a.__buty-text(href='#')
+              //- +buty-text('ACCESSORIES')
+            .__featured
+              .__featured-title featured
+              .__c-box
+                .__card
+                  a.__card-link(href='#')
+                  img.__card-pic(src='assets/images/featured/featured_1.jpg' alt='')
+                  .__card-desc Лукбук весна 2019
+
+        .__content#storeContent4
+          .__content-row
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Обувь
+                li.__list-item
+                  a.__list-link(href='#') Ботинки
+                li.__list-item 
+                  a.__list-link(href='#') Ботильоны
+                li.__list-item 
+                  a.__list-link(href='#') Сапоги
+                li.__list-item  
+                  a.__list-link(href='#') Кеды
+                li.__list-item 
+                  a.__list-link(href='#') Кроссовки
+                li.__list-item
+                  a.__list-link(href='#') Крипперы
+                li.__list-item
+                  a.__list-link(href='#') Туфли 
+                li.__list-item
+                  a.__list-link(href='#') Топ-сайдеры
+                li.__list-item
+                  a.__list-link(href='#') Летняя обувь
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Одежда
+                li.__list-item
+                  a.__list-link(href='#') Куртки
+                li.__list-item 
+                  a.__list-link(href='#') Свитшоты
+                li.__list-item 
+                  a.__list-link(href='#') Худи
+                li.__list-item  
+                  a.__list-link(href='#') Кеды
+                li.__list-item 
+                  a.__list-link(href='#') Рубашки 
+                li.__list-item
+                  a.__list-link(href='#') Футболки
+                li.__list-item
+                  a.__list-link(href='#') Платья 
+                li.__list-item
+                  a.__list-link(href='#') Брюки
+                li.__list-item
+                  a.__list-link(href='#') Джынсы 
+                li.__list-item
+                  a.__list-link(href='#') Леггинсы 
+                li.__list-item
+                  a.__list-link(href='#') Шорты
+                li.__list-item
+                  a.__list-link(href='#') Платья 
+                li.__list-item
+                  a.__list-link(href='#') Брюки
+                li.__list-item
+            .__content-col
+              ul.__list
+                li.__list-item.--title
+                  a.__list-link(href='#') Аксессуары
+                li.__list-item
+                  a.__list-link(href='#') Ботинки
+                li.__list-item 
+                  a.__list-link(href='#') Ботильоны
+                li.__list-item 
+                  a.__list-link(href='#') Сапоги
+                li.__list-item  
+                  a.__list-link(href='#') Кеды
+                li.__list-item 
+                  a.__list-link(href='#') Кроссовки
+                li.__list-item
+                  a.__list-link(href='#') Крипперы
+                li.__list-item
+                  a.__list-link(href='#') Туфли 
+                li.__list-item
+                  a.__list-link(href='#') Топ-сайдеры
+                li.__list-item
+                  a.__list-link(href='#') Летняя обувь
+          .__future-box
+            a.__buty-text(href='#')
+              //- +buty-text('CLOTHING')
+            a.__buty-text(href='#')
+              //- +buty-text('ACCESSORIES')
+            .__featured
+              .__featured-title featured
+              .__c-box
+                .__card
+                  a.__card-link(href='#')
+                  img.__card-pic(src='assets/images/featured/featured_1.jpg' alt='')
+                  .__card-desc Лукбук весна 2019

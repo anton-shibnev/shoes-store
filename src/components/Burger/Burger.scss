@@ -1,57 +1,76 @@
-.burger {
-  display: none;
-  width: 20px;
-  height: 15px;
-  display: flex;
+$name: burger;
+
+.#{$name} {
+  $this: &;
+
+  width: 40px;
+  height: 35px;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
   transition: transform 330ms ease-out;
   z-index: 200;
+  margin-left: auto;
+  display: none;
 
-  &:hover {
-    .burger__line {
-      background: #0777ba;
+  &.on {
+    transform: rotate(-45deg);
+  }
+
+  &__line {
+    background-color: $dark;
+    width: 100%;
+    height: 4px;
+    transition: background 0.3s ease-in-out;
+  }
+
+  &__line--half {
+    width: 70%;
+  }
+
+  &__line--start {
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57), background 0.3s ease-in-out, width 0.3s ease-in-out;
+    transform-origin: right;
+    align-self: flex-end;
+    width: 50%;
+  }
+
+  &.on {
+    #{$this}__line--start {
+      transform: rotate(-90deg) translateX(3px);
+      align-self: flex-start;
+      width: 50%;
     }
   }
-}
 
-.burger.on {
-  transform: rotate(-45deg);
-}
+  &__line--end {
+    align-self: flex-start;
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57), background 0.3s ease-in-out;
+    transform-origin: left;
+    width: 50%;
+  }
 
-.burger__line {
-  background: #0777ba;
-  width: 100%;
-  height: 2px;
-  transition: background 0.3s ease-in-out;
-}
+  &.on {
+    #{$this}__line--end {
+      transform: rotate(-90deg) translateX(-3px);
+      align-self: flex-end;
+      width: 50%;
+    }
+  }
 
-.burger__line--half {
-  width: 70%;
-}
+  // == media ==
+  @media #{$laptop} {}
 
-.burger__line--start {
-  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57), background 0.3s ease-in-out, width 0.3s ease-in-out;
-  transform-origin: right;
-  align-self: flex-end;
-  width: 100%;
-}
+  @media #{$tablet} {
+    display: flex;
+  }
 
-.on .burger__line--start {
-  transform: rotate(-90deg) translateX(3px);
-  align-self: flex-start;
-  width: 50%;
-}
+  @media #{$mobile} {
+    width: 25px;
+    height: 18px;
 
-.burger__line--end {
-  align-self: flex-start;
-  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57), background 0.3s ease-in-out;
-  transform-origin: left;
-}
-
-.on .burger__line--end {
-  transform: rotate(-90deg) translateX(-3px);
-  align-self: flex-end;
-  width: 50%;
+    &__line {
+      height: 2px;
+    }
+  }
 }

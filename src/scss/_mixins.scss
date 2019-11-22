@@ -1,3 +1,15 @@
+// -- px to rem --
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+
 // -- font-face --
 
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
@@ -87,7 +99,8 @@
   right: 0;
   bottom: 0;
   position: absolute;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 
 @mixin hideText {
@@ -200,4 +213,13 @@
       left: 0;
     }
   }
+}
+
+@mixin svg-icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }

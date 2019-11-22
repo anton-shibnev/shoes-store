@@ -1,0 +1,59 @@
+section.BEM_reviews-slider
+  .container
+    .__title.h3 Наши отзывы - настоящие! Можете проверить 😊
+
+    .__wrapper
+      .__slider.glide#reviewsSlider
+        .__track(data-glide-el='track')
+          .__slides.glide__slides
+            - for (let i = 0; i < 3; i++)
+              .__slide.glide__slide
+                .__card
+                  a.__link(href='#')
+                  .__card-title Михаил Каштанов
+                  .__card-desc(max-text-rows='3') Сегодня опробовал печать на футболке. Ребята, а именно Леня и Даша (простите, если не правильно запомнил имена), делают все быстро и качественно!
+                  .__card-logo
+                    img.__card-pic(src='assets/images/svg/inst--color.svg' alt='')
+                .__card
+                  a.__link(href='#')
+                  .__card-title Михаил Каштанов
+                  .__card-desc(max-text-rows='3') Отличный магазин, отличный коллектив. Ребята всегда позитивные, отзывчивые :3
+                  .__card-logo
+                    img.__card-pic(src='assets/images/svg/2gis--color.svg' alt='')
+                .__card
+                  a.__link(href='#')
+                  .__card-title Михаил Каштанов
+                  .__card-desc(max-text-rows='3') Отличный магазин, отличный коллектив. Ребята всегда позитивные, отзывчивые :3
+                  .__card-logo
+                    img.__card-pic(src='assets/images/svg/vk--color.svg' alt='')
+              .__slide.glide__slide
+                .__card
+                  a.__link(href='#')
+                  .__card-title Михаил Каштанов
+                  .__card-desc(max-text-rows='3') Отличный магазин, отличный коллектив. Ребята всегда позитивные, отзывчивые :3
+                  .__card-logo
+                    img.__card-pic(src='assets/images/svg/vk--color.svg' alt='')
+                .__card
+                  a.__link(href='#')
+                  .__card-title Михаил Каштанов
+                  .__card-desc(max-text-rows='3') Отличный магазин, отличный коллектив. Ребята всегда позитивные, отзывчивые :3
+                  .__card-logo
+                    img.__card-pic(src='assets/images/svg/2gis--color.svg' alt='')
+                .__card
+                  a.__link(href='#')
+                  .__card-title Тетя Маша
+                  .__card-desc(max-text-rows='3') Отличный магазин, отличный коллектив. Ребята всегда позитивные, отзывчивые :3
+                  .__card-logo
+                    img.__card-pic(src='assets/images/svg/2gis--color.svg' alt='')
+
+
+        .__arrows.glide__arrows(data-glide-el="controls")
+          .__counter.glide__counter
+          button.__arrow.--left.glide__arrow.glide__arrow--left(data-glide-dir='<')
+            include ../../static/images/svg/arrow-left.svg
+          button.__arrow.--right.glide__arrow.glide__arrow--right(data-glide-dir='>')
+            include ../../static/images/svg/arrow-right.svg
+
+      .__soc-list
+        .__soc-desc Оставьте свой отзыв в соц. сетях FAB Store
+        include ../soc-list/soc-list

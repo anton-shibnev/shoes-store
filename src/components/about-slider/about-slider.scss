@@ -1,0 +1,378 @@
+$name: about-slider;
+
+.#{$name} {
+  $this: &;
+
+  padding-bottom: 100px;
+  margin-bottom: 50px;
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: 100px;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: 200%;
+      left: -100%;
+      height: 210px;
+      background: #F3F3F3;
+      bottom: 0;
+      box-shadow: 0px 40px 50px rgba(39, 41, 49, 0.2);
+    }
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__box {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+
+    height: 485px;
+    width: 50%;
+    margin-left: 100px;
+
+    display: grid;
+    grid-auto-flow: row;
+    align-items: end;
+
+    &:hover {
+
+      #{$this}__box-pic {
+        &::after {
+          background-color: rgba(39, 41, 49, 0.4);
+        }
+      }
+    }
+  }
+
+  &__box-link {
+    @include spread;
+    z-index: 5;
+  }
+
+  &__box-pic {
+    @include spread;
+    @include pic-wrapper;
+    z-index: -1;
+
+    &::after {
+      @include spread;
+      content: '';
+      display: block;
+      background-color: rgba(39, 41, 49, 0.6);
+
+      transition: background-color .4s ease-in-out;
+    }
+  }
+
+  &__box-footer {
+    padding: 55px 60px 55px 30px;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__box-desc {
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &__slider {
+    position: relative;
+    width: 50%;
+    margin-left: 30px;
+  }
+
+  &__track {
+    overflow: hidden;
+  }
+
+  &__arrows {
+    position: absolute;
+    bottom: -50px;
+    z-index: 10;
+    left: -100%;
+    display: grid;
+    grid-template-columns: minmax(100px, 250px) 100px 100px;
+    grid-template-rows: 100px;
+  }
+
+  &__arrow {
+    @include btn-reset;
+    position: relative;
+    backface-visibility: hidden;
+
+    &--left {
+      background-color: $theme-color;
+
+      &:hover {
+        svg {
+          transform: translate(-60%, -50%);
+        }
+      }
+    }
+
+    &--right {
+      background-color: #272931;
+
+      &:hover {
+        svg {
+          transform: translate(-40%, -50%);
+        }
+      }
+    }
+
+    svg {
+      position: absolute;
+      width: 30px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      stroke: #fff;
+      stroke-width: 0.2rem;
+      transition: transform .2s ease-in-out;
+      stroke-linecap: round;
+    }
+  }
+
+  &__counter {
+    background-color: $color;
+    color: #fff;
+    // width: 260px;
+    position: relative;
+
+    .glide__wrap-counter {
+      @include abs-center;
+    }
+
+    .glide__counter-current {
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    .glide__counter-all {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      opacity: .4;
+      margin-left: 2px;
+      margin-bottom: -10px;
+    }
+  }
+
+  &__slide {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+
+  &__card {
+    position: relative;
+    display: grid;
+    grid-template-rows: 400px 1fr;
+
+    &:hover {
+      #{$this}__card-pic {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  &__link {
+    @include spread;
+    z-index: 5;
+  }
+
+  &__card-pic {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      @include spread;
+      object-fit: cover;
+      backface-visibility: hidden;
+      transition: transform .3s ease-in-out;
+    }
+  }
+
+  &__card-desc {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    background-color: #fff;
+
+    padding: 65px 30px;
+  }
+
+  // == media ==
+  @media #{$laptop} {
+    margin-bottom: 20px;
+
+    &__title {
+      margin-bottom: 70px;
+    }
+
+    &__box {
+      height: 300px;
+      margin-left: 0;
+    }
+
+    &__card {
+      grid-template-rows: 300px 1fr;
+    }
+
+    &__card-desc {
+      padding: 25px 30px;
+    }
+
+    &__arrows {
+      grid-template-columns: 180px 80px 80px;
+      grid-template-rows: 80px;
+    }
+
+    &__box-footer {
+      padding: 35px 60px 35px 30px;
+    }
+
+    &__box-desc {
+      font-size: 18px;
+    }
+
+    &__card-desc {
+      font-size: 18px;
+    }
+  }
+
+  @media #{$tablet} {
+    margin-bottom: 0;
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__box {
+      height: 245px;
+    }
+
+    &__slider {
+      margin-left: 18px;
+    }
+
+    &__slide {
+      grid-gap: 18px;
+    }
+
+    &__card {
+      grid-template-rows: 245px 1fr;
+    }
+
+    &__card-desc {
+      padding: 20px 13px;
+    }
+
+    &__arrows {
+      margin-left: 18px;
+      bottom: -40px;
+      grid-template-columns: 1fr 100px 100px;
+    }
+
+    &__counter {
+      width: 140px;
+    }
+
+    &__arrow {
+
+      &:hover {
+        svg {
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  @media #{$mobile} {
+    &__row {
+      display: block;
+      padding-bottom: 70px;
+    }
+
+    &__box {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    &__box-footer {
+      padding: 15px 30px;
+    }
+
+    &__box-desc {
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    &__slider {
+      width: 100%;
+      margin: 0;
+    }
+
+    &__card {
+      grid-template-rows: 175px 1fr;
+    }
+
+    &__wrapper {
+      &::after {
+        height: 80%;
+        width: calc(100% + 40px);
+        left: -20px;
+        right: -20px;
+      }
+    }
+
+    &__arrows {
+      left: 0;
+      margin: 0;
+      bottom: -110px;
+    }
+
+    &__counter {
+      width: 100px;
+
+      .glide {
+        &__wrap-counter {
+          display: flex;
+        }
+
+        &__counter-current {
+          font-size: 20px;
+          line-height: 20px;
+        }
+
+        &__counter-all {
+          font-size: 15px;
+          line-height: 15px;
+          margin-left: 1px;
+          transform: translateY(9px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+menu.BEM_mob-menu-modal#mobMenuModal
+  .__inner
+    button.__close.close(type='button')
+      include ../../static/images/svg/close.svg
+    .__icons-row
+      a.__icon-btn.--heart(href='#')
+        include ../../static/images/svg/heart.svg
+      a.__icon-btn.--person(href='#')
+        include ../../static/images/svg/person.svg
+      button.__icon-btn.--cart(type='button' data-content='3' btn-popup='cartModal')
+        include ../../static/images/svg/cart.svg
+    nav.__nav
+      a.__nav-item(href='#') Магазин
+      a.__nav-item(href='#') Fab lab
+      a.__nav-item(href='#') Fab to Go
+      a.__nav-item.on(href='#') Блог
+    form.__search
+      label.__label-search
+        input.__input-search(placeholder='Поиск')
+      button.__search-btn(type='submit')
+        include ../../static/images/svg/search.svg

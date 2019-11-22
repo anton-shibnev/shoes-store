@@ -9,12 +9,11 @@ const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
   configs: path.join(__dirname, '../configs'),
-  pages: path.join(__dirname, '../src/pages'),
-  static: path.join(__dirname, '../static'),
-  assets: 'assets',
+  pages: path.join(__dirname, '../src/pug/pages'),
+  static: path.join(__dirname, '../src/static'),
 };
 
-const PAGES_DIR = `${PATHS.src}/pages/`;
+const PAGES_DIR = `${PATHS.src}/pug/pages/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => { return fileName.endsWith('.pug'); });
 
 module.exports = {
@@ -26,7 +25,7 @@ module.exports = {
     app: PATHS.src,
   },
   output: {
-    filename: `${PATHS.assets}/js/[name].[hash].js`,
+    filename: 'assets/js/[name].[hash].js',
     path: PATHS.dist,
   },
   optimization: {
@@ -103,13 +102,16 @@ module.exports = {
         {
           loader: 'pug-loader',
           options: {
+            self: true,
+            globals: true,
             pretty: true,
+            compileDebug: true,
           },
         },
         {
           loader: 'pug-bem-plain-loader',
           options: {
-            b: 'bem_',
+            b: 'BEM_',
           },
         },
       ],
@@ -123,19 +125,19 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}/css/[name].[hash].css`,
+      filename: 'assets/css/[name].[hash].css',
     }),
     new CopyWebpackPlugin([{
       from: `${PATHS.static}/images`,
-      to: `${PATHS.assets}/images`,
+      to: 'assets/images',
     },
     {
       from: `${PATHS.static}/fonts`,
-      to: `${PATHS.assets}/fonts`,
+      to: 'assets/fonts',
     },
     {
       from: `${PATHS.static}/video`,
-      to: `${PATHS.assets}/video`,
+      to: 'assets/video',
     },
     ]),
 

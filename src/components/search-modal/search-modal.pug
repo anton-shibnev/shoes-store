@@ -1,0 +1,52 @@
+nav.BEM_search-modal#searchModal(data-delay='500')
+  .__inner#searchModalInner
+    .__top
+      .container
+        .__top-row
+          button.__close.close(type='button')
+            include ../../static/images/svg/close.svg
+
+    .__wrapper
+      form.__form#searcModalForm
+        .container
+          label.__label-search
+            input.__input-search(placeholder='Поиск по сайту')
+          button.__search-btn(type='submit')
+            include ../../static/images/svg/search.svg
+
+      .__result#searchModalScroll
+        .container
+          .__result-row
+            ul.__list
+              li.__list-item
+                a.__list-link(href='#')
+                  strong Адидас 
+                  | бренд
+              li.__list-item
+                a.__list-link(href='#')
+                  strong Адидас 
+                  | кроссовки
+              li.__list-item
+                a.__list-link(href='#')
+                  strong Адидас 
+                  | аксессуары
+              li.__list-item
+                a.__list-link(href='#')
+                  strong Адидас 
+                  | женская Одежда
+              li.__list-item
+                a.__list-link(href='#')
+                  strong Адидас 
+                  | мужиская одежда 
+              li.__list-item
+                a.__list-link(href='#')
+                  strong Адидас 
+                  | летняя распродажа
+              li.__list-item
+                a.__list-link(href='#')
+                  strong Адидас 
+                  | нова коллекция
+
+            .__card-row
+              - for (let i = 0; i < 5; i++)
+                include ../search-card/search-card
