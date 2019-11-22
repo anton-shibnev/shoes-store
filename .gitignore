@@ -7,7 +7,6 @@
 node_modules
 
 # Dist & test
-dist
 test
 
 # BD, logs
