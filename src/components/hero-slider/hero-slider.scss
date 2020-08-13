@@ -182,7 +182,7 @@
     background-color: #d9a55f;
 
     &::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       $m: 400px;
@@ -197,7 +197,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       width: 10px;
@@ -318,10 +318,6 @@
         #{$this}__wrap-bg {
           transform: scale(1) translateX(0);
         }
-
-        // #{$this}__slide-bg {
-        //   transform: scale(1) translateX(0);
-        // }
       }
     }
   }
@@ -377,11 +373,9 @@
   }
 
   &__slide-bg {
-    // @include spread;
     object-fit: cover;
-
-    // transform: scale(1.3) translateX(5%);
-    // transition: transform 1.1s ease-in-out;
+    height: 100%;
+    width: 100%;
   }
 
   &__wrap-bg {
@@ -483,7 +477,6 @@
 
   @media #{$tablet} {
     &__arrow {
-
       &:hover {
         svg {
           transform: translate(-50%, -50%);
@@ -496,6 +489,7 @@
 
     &__slide {
       min-height: 700px;
+      height: auto;
     }
 
     &__soc-list,
@@ -575,6 +569,12 @@
   }
 
   @media #{$mobile} {
+    &__slide {
+      height: 100vh;
+      max-height: 600px;
+      min-height: auto;
+    }
+
     &__arrows {
       left: calc(#{percentage(8/12)} - 260px + 80px);
     }

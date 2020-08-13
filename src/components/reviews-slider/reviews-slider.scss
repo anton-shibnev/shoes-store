@@ -16,7 +16,7 @@ $name: reviews-slider;
     padding-bottom: 150px;
 
     &::after {
-      content: "";
+      content: '';
       display: block;
 
       position: absolute;
@@ -144,18 +144,17 @@ $name: reviews-slider;
   &__card {
     position: relative;
     background-color: #fff;
-    box-shadow: 0px 20px 30px rgba(39, 41, 49, 0.2);
-    border-radius: 0px 90px 0px 0px;
+    box-shadow: 2px 4px 16px rgba(39, 41, 49, 0.1);
+    border-radius: 0 90px 0 0;
     padding: 26px 30px;
     height: 150px;
     transition: box-shadow 0.2s ease-in-out;
     backface-visibility: hidden;
-
     display: flex;
     flex-direction: column;
 
     &:hover {
-      box-shadow: 0px 10px 10px rgba(39, 41, 49, 0.2);
+      box-shadow: 2px 10px 16px rgba(39, 41, 49, 0.1);
     }
   }
 
@@ -358,6 +357,10 @@ $name: reviews-slider;
   }
 
   @media #{$mobile} {
+    &__arrows {
+      grid-template-columns: 1fr 80px 80px;
+    }
+
     &__wrapper {
       padding-bottom: 40px;
     }

@@ -22,7 +22,7 @@ $name: about-slider;
       width: 200%;
       left: -100%;
       height: 210px;
-      background: #F3F3F3;
+      background: #f3f3f3;
       bottom: 0;
       box-shadow: 0px 40px 50px rgba(39, 41, 49, 0.2);
     }
@@ -46,7 +46,6 @@ $name: about-slider;
     align-items: end;
 
     &:hover {
-
       #{$this}__box-pic {
         &::after {
           background-color: rgba(39, 41, 49, 0.4);
@@ -71,7 +70,7 @@ $name: about-slider;
       display: block;
       background-color: rgba(39, 41, 49, 0.6);
 
-      transition: background-color .4s ease-in-out;
+      transition: background-color 0.4s ease-in-out;
     }
   }
 
@@ -145,7 +144,7 @@ $name: about-slider;
       pointer-events: none;
       stroke: #fff;
       stroke-width: 0.2rem;
-      transition: transform .2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
       stroke-linecap: round;
     }
   }
@@ -170,7 +169,7 @@ $name: about-slider;
       font-weight: bold;
       font-size: 20px;
       line-height: 24px;
-      opacity: .4;
+      opacity: 0.4;
       margin-left: 2px;
       margin-bottom: -10px;
     }
@@ -210,7 +209,7 @@ $name: about-slider;
       @include spread;
       object-fit: cover;
       backface-visibility: hidden;
-      transition: transform .3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
     }
   }
 
@@ -300,7 +299,6 @@ $name: about-slider;
     }
 
     &__arrow {
-
       &:hover {
         svg {
           transform: translate(-50%, -50%);
@@ -310,6 +308,10 @@ $name: about-slider;
   }
 
   @media #{$mobile} {
+    &__arrows {
+      grid-template-columns: 1fr 80px 80px;
+    }
+
     &__row {
       display: block;
       padding-bottom: 70px;

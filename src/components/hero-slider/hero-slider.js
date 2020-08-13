@@ -1,4 +1,3 @@
-import simpleParallax from 'simple-parallax-js';
 import Slider from '../../js/common/Slider';
 
 const heroSlider = (id) => {
@@ -28,11 +27,3 @@ const heroSlider = (id) => {
 };
 
 heroSlider('heroSlider');
-
-const heroParalax = () => {
-  const images = document.querySelectorAll('.hero-slider__slide-bg');
-  // eslint-disable-next-line no-new, new-cap
-  new simpleParallax(images);
-};
-
-heroParalax();

@@ -1,9 +1,9 @@
-@import "includes/normalize";
-@import "variables";
-@import "mixins";
-@import "includes/fonts";
-@import "includes/libs";
-@import "../components/**/*.scss";
+@import 'includes/normalize';
+@import 'variables';
+@import 'mixins';
+@import 'includes/fonts';
+@import 'includes/libs';
+@import '../components/**/*.scss';
 
 //default settings
 
@@ -47,7 +47,7 @@ h4,
 h5,
 h6,
 p {
-  margin: 0 0 .5rem 0;
+  margin: 0 0 0.5rem 0;
   line-height: 1.2;
 }
 
@@ -91,22 +91,22 @@ a {
   }
 }
 
-.container {
-  $p: 72px;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  flex: 0 0 auto;
-  max-width: 1440px;
-  padding: 0 $p;
+.container,
+%container {
+  $p: 40px;
+  $mw: 1440px;
 
-  // == media ==
-  @media #{$laptop} {
-  }
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0 auto;
+  padding: 0 $p;
+  max-width: $mw + ($p * 2);
+  width: 100%;
 
   @media #{$tablet} {
-  }
+    $p: 24px;
 
-  @media #{$mobile} {
+    padding: 0 $p;
+    max-width: $mw + ($p * 2);
   }
 }
